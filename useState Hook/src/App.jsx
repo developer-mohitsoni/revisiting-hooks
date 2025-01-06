@@ -1,9 +1,11 @@
-const MyComponent = () => {
+import Colorize from "./components/Colorize";
+
+const App = () => {
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="App">
+      <Colorize />
     </div>
   );
 };
 
-export default MyComponent;
+export default App;
