@@ -1,9 +1,9 @@
-import Colorize from "./components/Colorize";
+import Counter from "./components/Counter";
 
 const App = () => {
   return (
     <div className="App">
-      <Colorize />
+      <Counter />
     </div>
   );
 };
