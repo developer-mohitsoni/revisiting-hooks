@@ -1,9 +1,9 @@
-import Colorize from "./components/Colorize";
+import Greetings from "./components/Greeting";
 
 const App = () => {
   return (
     <div className="App">
-      <Colorize />
+      <Greetings />
     </div>
   );
 };
