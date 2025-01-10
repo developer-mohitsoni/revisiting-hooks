@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Greetings = () => {
   const [randomNumber, setRandomNumber] = useState(
     Math.floor(Math.random() * 5) + 1
   );
+
+  //! Example:- 1
+
+  useEffect(() => {
+    console.log("Random Greetings!!");
+  }, []); // Run only first render
   return (
     <div className="greeting">
       <h1>Random Greeting</h1>
