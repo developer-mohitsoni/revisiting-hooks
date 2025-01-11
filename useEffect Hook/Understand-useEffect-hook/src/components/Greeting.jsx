@@ -7,13 +7,15 @@ const Greetings = () => {
 
   const [greetings, setGreetings] = useState("");
 
-  //! Example:- 2
+  //! Example:- 4
 
   useEffect(() => {
     console.log("Random Greetings!!");
   }, []); // Run only first render
 
   useEffect(() => {
+    // Storing the random number in localstorage using useEffect Hook
+    window.localStorage.setItem("randomGreetings", randomNumber);
     switch (randomNumber) {
       case 1:
         setGreetings("Hello");
