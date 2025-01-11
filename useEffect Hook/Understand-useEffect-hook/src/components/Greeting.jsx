@@ -42,6 +42,7 @@ const Greetings = ({ randomMax }) => {
         setGreetings("Salutations");
         break;
     }
+    // Here we are passing props as also a dependency if , the props is change from it's parent component then we need to update this component as well to show the random number which uses jackpot value.
   }, [randomNumber, randomMax]);
   return (
     <div className="greeting">
