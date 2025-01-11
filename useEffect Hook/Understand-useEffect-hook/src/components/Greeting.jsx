@@ -42,7 +42,7 @@ const Greetings = ({ randomMax }) => {
         setGreetings("Salutations");
         break;
     }
-  }, [randomNumber]);
+  }, [randomNumber, randomMax]);
   return (
     <div className="greeting">
       <h1 className="font-bold text-3xl">Random Greeting</h1>
