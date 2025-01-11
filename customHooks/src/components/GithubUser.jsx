@@ -1,30 +1,8 @@
-import { useState, useEffect } from "react";
+import useGithub from "../utils/useGithub";
 import InfoBlock from "./InfoBlock";
 
 const GithubUser = ({ username }) => {
-  const [user, setUser] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    fetchData();
-  }, [username]);
-
-  const fetchData = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(`https://api.github.com/users/${username}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      setUser(data);
-      setLoading(false);
-    } catch (err) {
-      setError(err);
-      setLoading(false);
-    }
-  };
+  const { user, loading, error } = useGithub(username);
 
   return (
     <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-lg max-w-md mx-auto">
