@@ -7,7 +7,7 @@ const Greetings = ({ randomMax }) => {
 
   const [greetings, setGreetings] = useState("");
 
-  //! Example:- 5
+  //! Example:- 6
 
   useEffect(() => {
     console.log("Greeting.js: useEffect()");
@@ -47,6 +47,21 @@ const Greetings = ({ randomMax }) => {
     // Agar tum randomMax ko dependency mein nahi rakhte aur parent component se randomMax ka value change hota hai, to useEffect firse run nahi karega, aur tumhare logic execute nahi honge. Iska matlab ye hoga ki tumhare localStorage aur greeting ka data purane randomMax ke hisaab se hi rahega, jo galat behavior hai.
 
     // Agar randomMax change ho gaya, par useEffect run nahi karega, toh tumhare greetings aur jackpot stale (purane aur outdated) ho jayenge.
+
+    // perform side effect cleanup
+
+    // This cleanup is not run on first rendering or can say initial mounting phase
+
+    // But every other subsequent rendering before the sideEffect callback gets take off cleanup function gets run once to clean things up.
+
+    // During the unmounting process, the sideEffect callback gets removed and cleanup function gets run to clean things up.
+    return () => {
+      console.log("Greeting.js: Cleanup");
+
+      // Here we are removing the random number from localstorage using useEffect Hook
+      window.localStorage.removeItem("random");
+      window.localStorage.removeItem("jackpot");
+    };
   }, [randomNumber, randomMax]);
   return (
     <div className="greeting">
