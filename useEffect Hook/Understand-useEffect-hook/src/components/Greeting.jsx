@@ -43,6 +43,10 @@ const Greetings = ({ randomMax }) => {
         break;
     }
     // Here we are passing props as also a dependency if , the props is change from it's parent component then we need to update this component as well to show the random number which uses jackpot value.
+
+    // Agar tum randomMax ko dependency mein nahi rakhte aur parent component se randomMax ka value change hota hai, to useEffect firse run nahi karega, aur tumhare logic execute nahi honge. Iska matlab ye hoga ki tumhare localStorage aur greeting ka data purane randomMax ke hisaab se hi rahega, jo galat behavior hai.
+
+    // Agar randomMax change ho gaya, par useEffect run nahi karega, toh tumhare greetings aur jackpot stale (purane aur outdated) ho jayenge.
   }, [randomNumber, randomMax]);
   return (
     <div className="greeting">
