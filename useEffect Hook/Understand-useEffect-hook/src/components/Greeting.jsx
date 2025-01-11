@@ -1,21 +1,27 @@
 import { useEffect, useState } from "react";
 
-const Greetings = () => {
+const Greetings = ({ randomMax }) => {
   const [randomNumber, setRandomNumber] = useState(
-    Math.floor(Math.random() * 5) + 1
+    Math.floor(Math.random() * randomMax) + 1
   );
 
   const [greetings, setGreetings] = useState("");
 
-  //! Example:- 4
+  //! Example:- 5
 
   useEffect(() => {
-    console.log("Random Greetings!!");
+    console.log("Greeting.js: useEffect()");
   }, []); // Run only first render
 
   useEffect(() => {
     // Storing the random number in localstorage using useEffect Hook
-    window.localStorage.setItem("randomGreetings", randomNumber);
+    window.localStorage.setItem("random", randomNumber);
+
+    if (randomMax === randomNumber) {
+      window.localStorage.setItem("jackpot", true);
+    } else {
+      window.localStorage.setItem("jackpot", false);
+    }
     switch (randomNumber) {
       case 1:
         setGreetings("Hello");
