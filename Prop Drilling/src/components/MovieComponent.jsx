@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieList from "./MovieList";
+import MovieAnalytics from "./MovieAnalytics";
 
 const MovieComponent = () => {
   const [movieData, setMovieData] = useState([]);
@@ -23,6 +24,7 @@ const MovieComponent = () => {
       <h1 className="text-3xl font-bold mb-6 text-center">Movie Gallery</h1>
       <div className="max-w-6xl mx-auto">
         <MovieList movies={movieData} />
+        <MovieAnalytics data={movieData} />
       </div>
     </div>
   );
