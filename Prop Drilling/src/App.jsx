@@ -1,9 +1,9 @@
-import MovieListEnhancedComponent from "./components/MovieListEnhancedComponent";
+import MovieComponent from "./components/MovieComponent";
 
 const App = () => {
   return (
-    <div className="App min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-      <MovieListEnhancedComponent />
+    <div className="App min-h-screen flex flex-col items-center justify-center bg-gradient-to-r bg-gray-900 text-white p-6">
+      <MovieComponent />
     </div>
   );
 };
