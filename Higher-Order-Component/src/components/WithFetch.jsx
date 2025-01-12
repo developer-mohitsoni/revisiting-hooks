@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const withFetch = (WrappedComponent) => {
-  const WithFetch = (props) => {
+  return (props) => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -30,10 +30,6 @@ const withFetch = (WrappedComponent) => {
       </>
     );
   };
-
-  WithFetch.displayName = `WithFetch(${WrappedComponent.name || "Component"})`;
-
-  return WithFetch;
 };
 
 export default withFetch;
