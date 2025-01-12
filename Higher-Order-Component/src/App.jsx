@@ -1,9 +1,9 @@
-import FindUser from "./components/FindUser";
+import MovieListEnhancedComponent from "./components/MovieListEnhancedComponent";
 
 const App = () => {
   return (
-    <div className="App flex items-center justify-center h-screen bg-gray-100">
-      <FindUser />
+    <div className="App min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+      <MovieListEnhancedComponent />
     </div>
   );
 };
