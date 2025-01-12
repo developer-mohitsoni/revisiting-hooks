@@ -28,13 +28,14 @@ const MovieAnalytics = ({ data }) => {
       averageRuntime,
     };
   });
+
   return (
-    <>
-      <h2>Movie Analytics</h2>
-      <div className="movie-container">
+    <div className="min-h-screen bg-gray-900 text-white p-6">
+      <h2 className="text-3xl font-bold mb-6 text-center">Movie Analytics</h2>
+      <div className="max-w-5xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
         <MovieDirectorTable directors={directors} />
       </div>
-    </>
+    </div>
   );
 };
 
