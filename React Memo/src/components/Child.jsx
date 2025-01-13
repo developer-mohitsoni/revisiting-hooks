@@ -1,4 +1,7 @@
+import React from "react";
+
 const Child = ({ header }) => {
+  console.log("Child is rendering!!!");
   return (
     <div className="child border-[1px] border-solid border-[rgb(27,3,107)] p-3 m-3 shadow-child-custom-blue">
       <h1>{header}</h1>
