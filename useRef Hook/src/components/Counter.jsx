@@ -7,7 +7,7 @@ const Counter = () => {
   useEffect(() => {
     setCount((prev) => prev + 1);
     console.log("Incrementing counter");
-  }); // Increment the count infinite time and page rendering infinite time
+  }, []); // Increment the count once the page render
   return <>{count}</>;
 };
 
