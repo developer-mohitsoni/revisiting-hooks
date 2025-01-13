@@ -1,14 +1,13 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useRef, useEffect } from "react";
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  const countRef = useRef(0);
 
   useEffect(() => {
-    setCount((prev) => prev + 1);
+    countRef.current = countRef.current + 1;
     console.log("Incrementing counter");
-  }, []); // Increment the count once the page render
-  return <>{count}</>;
+  });
+  return <>{countRef.current}</>;
 };
 
 export default Counter;
