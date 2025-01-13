@@ -15,4 +15,9 @@ const Child = ({ header }) => {
   );
 };
 
+// This component will be memoized, meaning it will only re-render when the props change.
 export default React.memo(Child);
+
+// This is rendering if it's Parent component is change or rendered. This causes performance issue.
+// export default Child;
+
