@@ -12,4 +12,4 @@ const Child = ({ header }) => {
   );
 };
 
-export default Child;
+export default React.memo(Child);
