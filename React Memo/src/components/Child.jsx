@@ -1,6 +1,6 @@
 const Child = ({ header }) => {
   return (
-    <div className="child">
+    <div className="child border-[1px] border-solid border-[rgb(27,3,107)] p-3 m-3 shadow-child-custom-blue">
       <h1>{header}</h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam magni
